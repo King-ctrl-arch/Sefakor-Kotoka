@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sefakor's Dentals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sefakor's Dentals</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#appointments">Book an Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to Sefakor's Dentals</h2>
+        <p>Your smile is our priority!</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Teeth Cleaning</li>
+            <li>Fillings</li>
+            <li>Orthodontics</li>
+            <li>Teeth Whitening</li>
+            <li>Root Canal Treatment</li>
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a dedicated team of dental professionals committed to providing the highest quality dental care. Our clinic offers a wide range of services to help you achieve and maintain a healthy, beautiful smile.</p>
+        <p>Our team consists of experienced dentists, hygienists, and support staff who are passionate about their work. We use the latest technology and techniques to ensure that you receive the best possible care.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@sefakorsdentals.com</p>
+        <p>Phone: +1 123-456-7890</p>
+        <p>Address: 123 Dental Street, Smile City, SM 12345</p>
+        <form action="submit_form.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <section id="appointments">
+        <h2>Book an Appointment</h2>
+        <form id="appointment-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time" required>
+            
+            <label for="service">Service:</label>
+            <select id="service" name="service" required>
+                <option value="cleaning">Teeth Cleaning</option>
+                <option value="fillings">Fillings</option>
+                <option value="orthodontics">Orthodontics</option>
+                <option value="whitening">Teeth Whitening</option>
+                <option value="root_canal">Root Canal Treatment</option>
+            </select>
+            
+            <button type="button" onclick="submitForm()">Book Appointment</button>
+        </form>
+    
+        <script>
+            function submitForm() {
+                const form = document.getElementById('appointment-form');
+                const formData = new FormData(form);
+    
+                const queryString = new URLSearchParams(formData).toString();
+                window.location.href = `confirmation.html?${queryString}`;
+            }
+        </script>
+    </section>
+          </footer>
+</body>
+</html>

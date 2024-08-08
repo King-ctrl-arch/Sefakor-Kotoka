@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation - Sefakor's Dentals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sefakor's Dentals</h1>
+    </header>
+
+    <section id="confirmation">
+        <h2>Appointment Confirmation</h2>
+        <p>Thank you for booking an appointment with us. Here are your appointment details:</p>
+        <ul id="appointment-details">
+            <!-- Details will be populated by JavaScript -->
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2024 Sefakor's Dentals</p>
+    </footer>
+
+    <script>
+        // Get query parameters from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Get the appointment details
+        const name = urlParams.get('name');
+        const email = urlParams.get('email');
+        const phone = urlParams.get('phone');
+        const date = urlParams.get('date');
+        const time = urlParams.get('time');
+        const service = urlParams.get('service');
+
+        // Display the appointment details
+        const detailsList = document.getElementById('appointment-details');
+        detailsList.innerHTML = `
+            <li><strong>Name:</strong> ${name}</li>
+            <li><strong>Email:</strong> ${email}</li>
+            <li><strong>Phone:</strong> ${phone}</li>
+            <li><strong>Preferred Date:</strong> ${date}</li>
+            <li><strong>Preferred Time:</strong> ${time}</li>
+            <li><strong>Service:</strong> ${service}</li>
+        `;
+    </script>
+</body>
+</html>
